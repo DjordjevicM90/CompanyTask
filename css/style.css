@@ -1,0 +1,10 @@
+#header{
+    margin-bottom: 50px;
+}
+
+#showAll-products{
+    background-color: rgb(110, 128, 128);
+    margin: auto;
+    width: 70%;
+    height: 500px;
+}

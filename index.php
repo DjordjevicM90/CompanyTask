@@ -14,6 +14,7 @@
 
     <script src="JScript/jquery-3.6.0.js"></script>
     <script src="JScript/config.js"></script>
+    <script src="JScript/login.js"></script>
 
     <link href="css/style.css" rel="stylesheet">
 
@@ -22,6 +23,10 @@
 <body>
 
     <?php include("header.php")?>
+    
+    <div id="showAll-products">
+        
+    </div>
 
 </body>
 </html>

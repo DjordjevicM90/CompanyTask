@@ -38,5 +38,25 @@
             }
             return $this;
         }
+
+        public function selectRow($table, $email, $column){
+            $sql = "SELECT * FROM $table WHERE $column = '$email' ";
+
+            if(!$this->query($sql)->getError())
+            {
+                return $this->_results;
+            }
+            else return false;
+
+        }
+
+        public function getError()
+        {
+            return $this->_error;
+        }
+
+        public function getCount(){
+            return $this->_count;
+        }
     }
 ?>

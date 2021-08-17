@@ -13,20 +13,37 @@
         }
 ?>
 
-<nav class="navbar navbar-expand-lg navbar-light bg-dark ">
+<nav class="navbar navbar-expand-lg navbar-light bg-dark " id="header">
   <div class="container-fluid">
     
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <?php
+            if(!login()){
 
+        ?>
+
+            <li class="nav-item">
+                <a href="#" class="nav-link text-light" data-bs-toggle="modal" data-bs-target="#signIn">Sign in</a>
+            </li>
+
+        <?php
+        }
+        else
+        {
+
+        ?>
         <li class="nav-item">
-            <a href="#" class="nav-link text-light" data-bs-toggle="modal" data-bs-target="#signIn">Sign in</a>
+            <a href="#" class="nav-link text-light" data-bs-toggle="modal" data-bs-target="#signIn"><?= $_SESSION['user_name'] ?></a>
         </li>
 
         <li class="nav-item">
-          <a class="nav-link" href="#">Sing out</a>
+          <a class="nav-link text-light" href="login.php?logoff">Sing out</a>
         </li>
+        <?php
+        }
+        ?>
 
       </ul>
 
@@ -44,14 +61,14 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <form >
+                    <form action="index.php" method="post">
                         <div class="mb-3">
                             <label for="first-name" class="col-form-label">Email name</label>
-                            <input type="email" class="form-control" id="email-login">
+                            <input type="email" class="form-control" name="email-login" id="email-login">
                         </div>
                         <div class="mb-3">
                             <label for="first-name" class="col-form-label">Password</label>
-                            <input type="password" class="form-control" id="password-login">
+                            <input type="password" class="form-control" name="password-login" id="password-login">
                         </div>    
                     </form>
                 </div>
