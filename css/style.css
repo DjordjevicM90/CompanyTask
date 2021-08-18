@@ -3,10 +3,8 @@
 }
 
 #showAll-products{
-    background-color: rgb(110, 128, 128);
     margin: auto;
-    width: 70%;
-    height: 500px;
+    text-align: center;
 }
 
 #message-login{
@@ -14,4 +12,11 @@
     margin: auto;
     width: 70%;
     height: 500px;
+}
+
+.product-block{ 
+    border: solid black 1px;
+    padding: 5px 20px;
+    display: inline-block;
+    width: 500px;
 }
