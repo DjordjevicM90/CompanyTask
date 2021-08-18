@@ -33,12 +33,20 @@
 
         ?>
         <li class="nav-item">
-            <a href="#" class="nav-link text-light" data-bs-toggle="modal" data-bs-target="#signIn"><?= $_SESSION['user_name'] ?></a>
+                <a href="index.php" class="nav-link text-light">Home</a>
+            </li>
+        <li class="nav-item">
+            <a href="#" class="nav-link text-light" ><?= $_SESSION['user_name'] ?></a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link text-light" href="administrator.php">Administration</a>
         </li>
 
         <li class="nav-item">
           <a class="nav-link text-light" href="login.php?logoff">Sing out</a>
         </li>
+
         <?php
         }
         ?>

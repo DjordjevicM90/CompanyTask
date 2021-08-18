@@ -93,6 +93,7 @@
                 <button type="submit" name="btn-import" >Import csv file</button>   
 
             </form>
+    <!-- //////// END of IMPORT CSV FILE///////// -->
 
             <form action="index.php" method="post" name="category" >
  
@@ -113,9 +114,7 @@
                         
                     ?>
                 </select><br><br>
-                
-                <button type="button" name="btn-category" >Seach</button>   
-
+                  
             </form>
             
         </div>

@@ -85,6 +85,36 @@
             }
         }
 
+        public function update($table, $id, $fields, $column)
+        {
+            $set = "";
+
+            $x=1;
+            foreach($fields as $name =>$value){
+                $set .= "{$name} = ?";
+                if($x<count($fields)){
+                    $set .= ", ";
+                }
+                $x++;
+            }
+            $sql = "UPDATE {$table} SET {$set} WHERE $column = {$id}";
+
+            if(!$this->query($sql, $fields)->getError()){
+                return true;
+            }
+            return false;
+        }
+
+        public function delete($table, $id, $column)
+        {
+            $sql = "DELETE FROM $table WHERE $column = $id";
+
+            if(!$this->query($sql)->getError()){
+                return true;
+            }
+            return false;
+        }
+
         public function getError()
         {
             return $this->_error;
