@@ -85,11 +85,36 @@
             }
         }
     ?>
-        <div class="px-5 my-5">
+        <div class="px-5 my-5 d-flex">
             <form action="index.php" method="post" name="uploadCsv" enctype="multipart/form-data">
 
                 <input type="file" name="csv-file" id="csv-file" accept=".csv"><br><br>
+                
                 <button type="submit" name="btn-import" >Import csv file</button>   
+
+            </form>
+
+            <form action="index.php" method="post" name="category" >
+ 
+                <select  name="select" id="select" onchange="getval(this)">  
+                    <option value="0">Chose category</option>
+                    <?php
+                        $table = "category_products";
+
+                        $row = $db->selectAll($table);
+                        
+                            foreach($row as $obj)
+                            {
+                                $categoryId = $obj->category_id;
+                                $categoryName = $obj->category_name;
+
+                                echo "<option value='{$categoryId}'>$categoryName</option>";
+                            }
+                        
+                    ?>
+                </select><br><br>
+                
+                <button type="button" name="btn-category" >Seach</button>   
 
             </form>
             
