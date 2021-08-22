@@ -1,3 +1,2 @@
 
-*.js linguist-detectable=false
-*.php linguist-detectable=true
+*.JavaScript linguist-language=php
